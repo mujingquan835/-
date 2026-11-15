@@ -1,0 +1,890 @@
+{
+ "FrigadeHQ/yogurt": {
+  "one_liner": "完全本地运行的 AI 会议记录软件，免费开源的 Granola 替代品",
+  "problem": "主流会议记录工具要往会议里加机器人、录音上传云端，有隐私顾虑还收费。Yogurt 直接录系统音频，转写和总结都在本机完成。",
+  "features": [
+   "不加入机器人，直接录电脑上的通话音频",
+   "实时转写，支持 99 种语言",
+   "本地大模型自动写会议纪要，可跨会议提问并给出处",
+   "Mac 上能识别 Zoom/Teams/Meet 的发言人",
+   "自带本地 MCP 服务，可让其他 AI 助手读取笔记"
+  ],
+  "audience": "经常开线上会、在意隐私的职场人",
+  "video_angle": "「不花钱、不上传、不进会议室的 AI 会议秘书」——和 Granola/飞书妙记做对比实测。",
+  "category": "AI应用/产品",
+  "ease": "开箱即用",
+  "broad": "💼 办公效率"
+ },
+ "DIYgod/pinky": {
+  "one_liner": "让 AI 直接操作你的 iPhone/安卓手机，危险操作要你批准",
+  "problem": "AI Agent 大多只能操作电脑，手机里的 App 碰不到。Pinky 让 Claude Code、Codex 等任何 Agent 通过 MCP 操控真机，你在电脑上看着、随时接管。",
+  "features": [
+   "支持 iPhone（iOS 17.4+）和安卓 10–17",
+   "任何支持 MCP 的 Agent 一键接入",
+   "付款、发消息等敏感操作由网关强制审批",
+   "手机端 App 可脱离电脑独立执行任务，支持 DeepSeek/Qwen/Kimi 等模型",
+   "定时任务与记忆"
+  ],
+  "audience": "想让 AI 帮忙刷手机任务的效率党、Agent 开发者",
+  "video_angle": "「让 AI 替我玩手机」：现场演示 AI 自己点外卖/回消息，付款前弹窗让我确认。作者是 RSSHub 作者 DIYgod，可作看点。",
+  "category": "Agent/智能体",
+  "ease": "需要一定配置",
+  "broad": "🤖 AI 智能体"
+ },
+ "jamesondh/chimera-vocal-synth": {
+  "one_liner": "在浏览器里用物理建模模拟人声的合成器，能说话、唱歌、beatbox",
+  "problem": "现有歌声合成依赖采样或神经网络。它从零模拟肺、声带、声道和嘴唇来发声，不用任何采样，打开网页就能玩。",
+  "features": [
+   "拖动舌头、嘴唇、下颌实时改变发音",
+   "输入英文或音标让它说话",
+   "输入歌词自动配旋律演唱，可导出 9:16 视频",
+   "支持韩语等多语言",
+   "Rust + WebAssembly，另有 VST3/AU 插件"
+  ],
+  "audience": "音乐爱好者、声音设计师、喜欢新奇玩具的人",
+  "video_angle": "「一个没有任何录音的声音」：展示虚拟喉咙从机器人音到接近真人的过程，非常适合做猎奇向短视频。",
+  "category": "语音/音频",
+  "ease": "开箱即用",
+  "broad": "🗣️ 语音音乐"
+ },
+ "agentes-chat/agentes-chat": {
+  "one_liner": "开源自托管的 Slack 替代品，AI Agent 和同事一起在频道里干活",
+  "problem": "团队聊天里的 AI 往往只是侧边栏机器人。这里 Agent 是正式成员，有角色、负责人和预算，能用自己的电脑和浏览器做事，敏感操作需人工批准。",
+  "features": [
+   "频道、私信、线程等完整团队聊天",
+   "Agent 可接 Claude/ChatGPT/Gemini/Grok/DeepSeek 等",
+   "每个 Agent 有独立电脑、浏览器和记忆",
+   "合并代码、部署等操作需在聊天里审批",
+   "Docker 一条命令自托管，免费无付费墙"
+  ],
+  "audience": "小团队、技术团队负责人",
+  "video_angle": "「我给团队招了 3 个 AI 同事」：展示 AI 在群里接任务、干完回报。",
+  "category": "Agent/智能体",
+  "ease": "需要一定配置",
+  "broad": "💼 办公效率"
+ },
+ "IainKay/ram-altman": {
+  "one_liner": "恶搞脚本：每天给 Sam Altman 发邮件，举报你电脑里闲着的内存",
+  "problem": "回应 Sam Altman「个人电脑囤着内存很浪费」的言论。脚本监测空闲内存，超过 10% 就自动发一封阴阳怪气的邮件。",
+  "features": [
+   "统计内存使用",
+   "每天最多发一封邮件",
+   "轮换 8 种标题、10 种正文",
+   "Bash 编写，附 14 个测试"
+  ],
+  "audience": "看热闹的科技圈网友",
+  "video_angle": "AI 圈梗类内容：「网友写脚本每天给 OpenAI CEO 汇报内存」，适合做热点吐槽。",
+  "category": "其他",
+  "ease": "开箱即用",
+  "broad": "🎮 游戏娱乐"
+ },
+ "sarpstar/cinecode": {
+  "one_liner": "让 AI 编程助手用代码拍电影，直接交给你一个 MP4",
+  "problem": "做短片、解说视频要剪辑、配音、做动画。这里由 Claude Code 等写脚本、用代码生成每一帧、配好声音，输出成片。",
+  "features": [
+   "短片、YouTube 长视频、广告、解说、MV 都能做",
+   "长视频会做资料调研，每个事实都附来源",
+   "多种画风：3D、2D 动画、水墨、黏土、像素等",
+   "先给你看前两个镜头确认再全片制作",
+   "配音可用免费额度的 Gemini 或 ElevenLabs"
+  ],
+  "audience": "做视频的创作者、想自动化出片的自媒体",
+  "video_angle": "跟你的赛道直接相关：「我让 AI 给我拍了一条视频」，可以用它做一期并展示效果。",
+  "category": "图像/视频生成",
+  "ease": "需要一定配置",
+  "broad": "🎬 视频创作"
+ },
+ "caru-ini/stack-diagram": {
+  "one_liner": "用一句话描述技术栈，自动生成带官方 Logo 的架构图",
+  "problem": "画架构图费时又不好看。装上这个 Skill，告诉 AI「Next.js 部署在 Vercel，数据库用 Neon」，就出一张带官方图标的漂亮图。",
+  "features": [
+   "支持 AWS/GCP/Azure 官方图标",
+   "浅色、深色两种主题",
+   "导出单个 HTML、PNG 或 React 组件",
+   "可选发布到公开图库"
+  ],
+  "audience": "程序员、技术博主、写方案的架构师",
+  "video_angle": "「一句话出架构图」前后对比，适合技术类短视频。",
+  "category": "编程助手",
+  "ease": "开箱即用",
+  "broad": "🎨 设计绘图"
+ },
+ "voyager-so/vork": {
+  "one_liner": "专为 AI Agent 设计的 3D 与特效渲染引擎",
+  "problem": "Blender 等工具是给人用鼠标操作的，AI 很难驾驭。vork 让 Agent 用代码写出整个场景（含着色器、相机、物理），GPU 渲染速度号称比 Blender EEVEE 快 1–11 倍。",
+  "features": [
+   "核心 API 只有约 2500 token，AI 容易学会",
+   "Agent 可自己写 GPU 着色器",
+   "100 万只鸟群动画 97 秒渲染完成",
+   "无显卡可用官方云 GPU"
+  ],
+  "audience": "做 AI 视频/动画的开发者、技术美术",
+  "video_angle": "「AI 自己写代码渲染了 100 万只鸟」，用震撼画面开场。",
+  "category": "图像/视频生成",
+  "ease": "偏开发者/研究",
+  "broad": "🎬 视频创作"
+ },
+ "Sandflow-ai/sand3d": {
+  "one_liner": "专为大模型设计的 Python 3D 建模库，几十行代码造一台能动的洗衣机",
+  "problem": "让 AI 直接写 Blender 脚本又长又容易错。sand3d 用按名字引用零件的简短代码描述物体，token 消耗少 2–6 倍，结果确定可复现。",
+  "features": [
+   "整个 API 约 3600 token，可整体塞进提示词",
+   "零件、关节、装配体都能定义，能做可动模型",
+   "导出 GLB/URDF/USD/OBJ/STL 等格式",
+   "可直接用于机器人仿真（URDF）"
+  ],
+  "audience": "3D 建模、机器人仿真、AIGC 3D 方向开发者",
+  "video_angle": "「让 AI 用 38 行代码造出一台能开门的洗衣机」。",
+  "category": "图像/视频生成",
+  "ease": "偏开发者/研究",
+  "broad": "🎨 设计绘图"
+ },
+ "paipiange/nvzhuang": {
+  "one_liner": "2700 多套 AI 生成服装参考图库，附 AI 一键换装试穿",
+  "problem": "做穿搭、Cosplay、画画找服装参考很难。这里收录写实和二次元两套纯服装图，可检索，还能上传自拍用 AI 试穿。",
+  "features": [
+   "写实 1407 套 + 动漫 1320 套服装图",
+   "中英双语检索、分类筛选",
+   "内置 1499 位 AI 模特",
+   "AI 试衣支持 GPT Image、豆包 Seedream、Gemini（需自备 Key）",
+   "有安卓 App，MIT 可商用"
+  ],
+  "audience": "穿搭博主、画师、Cosplay 爱好者",
+  "video_angle": "源自 Linux.do 社区的整活项目，「一键变身女装大佬」话题性强。",
+  "category": "图像/视频生成",
+  "ease": "开箱即用",
+  "broad": "🎨 设计绘图"
+ },
+ "wquguru/cicada": {
+  "one_liner": "知了：任何会议和直播的实时双语字幕、同声传译和 AI 纪要",
+  "problem": "跨语言开会、看外语直播听不懂。知了直接监听系统声音，实时出双语字幕；你说话时按住快捷键，对方听到的是翻译后的声音。",
+  "features": [
+   "腾讯会议、飞书、Zoom、B站直播、YouTube 等都能用",
+   "实时双语字幕 + 结构化会议纪要",
+   "按键说话，对方听到翻译后的语音",
+   "Apple 芯片 Mac 上识别完全本地，无需 Key",
+   "支持 Mac/Windows/Linux/安卓"
+  ],
+  "audience": "跨国团队、看外语内容的学习者、出海从业者",
+  "video_angle": "「用中文开英文会」：实测同传效果，国产开源项目更有亲切感。",
+  "category": "语音/音频",
+  "ease": "开箱即用",
+  "broad": "🗣️ 语音音乐"
+ },
+ "alexeyw/lot-map": {
+  "one_liner": "Claude Code 插件：在聊天旁实时显示 AI 正在干什么的动态地图",
+  "problem": "看 AI 编程助手干活只能盯着一行行命令。它把每次工具调用、模型请求、子 Agent 画成地图上的闪光脉冲，一眼看懂 AI 在读文件、联网还是跑命令。",
+  "features": [
+   "文件、命令行、网络、记忆、子 Agent 等分站点显示",
+   "完全本地，支持 7 种语言",
+   "一条命令安装"
+  ],
+  "audience": "Claude Code 用户",
+  "video_angle": "视觉效果好，适合做「AI 写代码时脑子里在想什么」的可视化演示。",
+  "category": "编程助手",
+  "ease": "开箱即用",
+  "broad": "💻 编程开发"
+ },
+ "N1nEmAn/sapper-v2": {
+  "one_liner": "自主 AI 渗透测试军团，拿下腾讯云攻防挑战赛冠军",
+  "problem": "安全测试依赖大量人工。sapper 是多 Agent 编排框架，8 小时无人值守完成渗透测试，用 1B token 打赢了消耗 4.5B 的对手。",
+  "features": [
+   "634 支队伍中夺冠，GeekCon 2026 一等奖",
+   "可自由替换 Agent（Claude Code/Codex 等）和模型（GLM/DeepSeek 等）",
+   "多角色分工协作",
+   "仅限授权的安全测试"
+  ],
+  "audience": "安全研究员、CTF 选手、AI Agent 研究者",
+  "video_angle": "「AI 黑客军团 8 小时无人值守夺冠」，可讲 AI 在安全领域的进展（注意强调合法授权）。",
+  "category": "Agent/智能体",
+  "ease": "偏开发者/研究",
+  "broad": "🔒 安全逆向"
+ },
+ "JosssphZhou/poki": {
+  "one_liner": "让 AI 操作真正的 iPhone，无需越狱和额外硬件",
+  "problem": "iPhone 很封闭，AI 很难操作。Poki 是装在手机上的 App，能读屏、点击、输入，在其他 App 里替你完成任务。",
+  "features": [
+   "用 Mac 或 Windows 装一次，之后脱离电脑运行",
+   "可自定义审批方式，支付、删除等操作必须确认",
+   "自带本地 MCP 服务",
+   "免费 Apple 账号即可签名使用"
+  ],
+  "audience": "iPhone 用户、想体验手机 Agent 的人",
+  "video_angle": "可和 Pinky 做同题对比：「两款让 AI 玩 iPhone 的开源项目谁更强」。",
+  "category": "Agent/智能体",
+  "ease": "需要一定配置",
+  "broad": "🤖 AI 智能体"
+ },
+ "physicsdolphin/nv-uefi-unlocker": {
+  "one_liner": "从 U 盘启动解锁 N 卡被限制的 AI 算力，号称张量性能最高 2.6 倍",
+  "problem": "作者称 GeForce 游戏卡的 Tensor 算力被厂商限制在半速。它在系统启动前解锁，无需刷 VBIOS，断电即恢复原状。",
+  "features": [
+   "支持 GTX 16 与 RTX 20/30/40 系列",
+   "实测 FP16/BF16 吞吐最高约 2.6 倍",
+   "AI 生图/生视频提速 14–75%",
+   "LLM 推理 prefill 最高 +19%",
+   "Windows/Linux 均可"
+  ],
+  "audience": "本地跑 AI 的 N 卡玩家",
+  "video_angle": "「老黄刀法被回退了？」话题性极强；做视频需提示稳定性与保修风险。",
+  "category": "推理/部署",
+  "ease": "需要一定配置",
+  "broad": "🧠 模型与算力"
+ },
+ "op7418/guizang-game-skill": {
+  "one_liner": "让 AI 从零做出能在浏览器里玩的 3D 动作游戏的 Skill",
+  "problem": "直接让 AI 做 3D 游戏通常只得到方块灰模。这个 Skill 总结了作者用 6 小时做出仙侠游戏《雾锁山门》的流程和踩过的坑。",
+  "features": [
+   "开工前先问清需求和素材工具",
+   "AI 自带截图自测工具",
+   "接入即梦、Tripo 等生成角色和场景",
+   "打包成单个 HTML，手机电脑都能玩",
+   "附可玩演示游戏"
+  ],
+  "audience": "想用 AI 做游戏的独立开发者、AI 创作者",
+  "video_angle": "作者是知名博主歸藏。可以「一句话让 AI 做一个仙侠游戏」实测复现。",
+  "category": "编程助手",
+  "ease": "需要一定配置",
+  "broad": "🎮 游戏娱乐"
+ },
+ "DenisSergeevitch/ex-ussr-kinship-research": {
+  "one_liner": "让 AI 变成严谨的家谱研究员，专查前苏联地区档案",
+  "problem": "查前苏联地区的祖辈档案涉及多语种、多国档案馆。这个 Skill 让 Agent 读教会记录、军事和镇压档案，区分已证实和推测的内容。",
+  "features": [
+   "覆盖 15 个前苏联国家",
+   "证据优先，每条发现可追溯",
+   "用你的语言回复"
+  ],
+  "audience": "做家族寻根的人、历史研究者",
+  "video_angle": "可作为「AI Skill 能做多垂直的事」的案例。",
+  "category": "Agent/智能体",
+  "ease": "需要一定配置",
+  "broad": "📚 知识学习"
+ },
+ "hitkeeen/blender-ai-mcp-addon": {
+  "one_liner": "Blender 里的 AI 助手：对话建模、改材质、多 Agent 工作流",
+  "problem": "Blender 学习门槛高、重复操作多。这个插件能看懂场景，用对话完成建模、排布、材质和导出。",
+  "features": [
+   "可视化聊天工作区，带视口截图",
+   "内置 MCP 服务器，外部 Agent 也能操控 Blender",
+   "支持 ChatGPT/Claude/Gemini/本地 Ollama",
+   "任务看板和审批"
+  ],
+  "audience": "3D 美术、Blender 用户",
+  "video_angle": "「用聊天的方式做 3D 场景」，录屏效果直观。",
+  "category": "MCP/工具集成",
+  "ease": "需要一定配置",
+  "broad": "🎨 设计绘图"
+ },
+ "lexifina/global-law": {
+  "one_liner": "把全世界的法律放进 Git，可查任何国家任意日期的法条",
+  "problem": "法律条文不断修订，很难查清某天到底有效的是哪个版本。这里每次 commit 就是一部法律生效，可以追溯每个字由哪部法律写入。",
+  "features": [
+   "按国家、州、市分仓库",
+   "查询任意日期的有效法条",
+   "CC0 协议免费可商用",
+   "前作美国法典版登上 Hacker News 第一"
+  ],
+  "audience": "法律从业者、做法律 AI 的开发者",
+  "video_angle": "「用程序员的方式管理法律」，可讲给法律 AI 提供数据底座的意义。",
+  "category": "数据/评测",
+  "ease": "偏开发者/研究",
+  "broad": "📚 知识学习"
+ },
+ "RunanywhereAI/trnrt": {
+  "one_liner": "跑在亚马逊 Trainium 芯片上的开源大模型推理引擎",
+  "problem": "大模型推理大多绑定英伟达 GPU。TrnRT 让 AWS 自研芯片 Trainium 高效跑大模型，支持 100 万 token 上下文，提供 OpenAI 兼容接口。",
+  "features": [
+   "每层融合为单个 NKI 巨型内核",
+   "100 万 token 上下文",
+   "多级前缀缓存",
+   "首个支持模型 GLM-5.3-Flash"
+  ],
+  "audience": "AI 基础设施工程师",
+  "video_angle": "可做「英伟达之外的 AI 芯片」科普的素材，普通观众门槛较高。",
+  "category": "推理/部署",
+  "ease": "偏开发者/研究",
+  "broad": "🧠 模型与算力"
+ },
+ "alchaincyf/huashu-motion": {
+  "one_liner": "让 AI 一键直出商业级产品宣传片，会作曲，能指着画面改",
+  "problem": "做产品发布片要动画、配乐、剪辑多个环节。告诉 Claude Code「给我的产品做个 30 秒发布片」，它出方案、写分镜、作曲，再在编辑器里让你点画面提修改。",
+  "features": [
+   "先给三个方向让你选",
+   "AI 写乐谱、本地生成配乐和音效，不调收费接口",
+   "在画面上点一下写意见，只改那一处",
+   "换成 DeepSeek 也能做，作者实测一支片子花 1.95 元"
+  ],
+  "audience": "产品经理、独立开发者、视频创作者",
+  "video_angle": "和你做视频直接相关：「2 块钱让 AI 做一支产品宣传片」，可直接实测出片。",
+  "category": "图像/视频生成",
+  "ease": "需要一定配置",
+  "broad": "🎬 视频创作"
+ },
+ "reacher-z/Awesome-REA": {
+  "one_liner": "逆向工程资源大全：网站、游戏、App、固件、协议，中英双语",
+  "problem": "逆向工程资料分散、质量参差。这里整理了经过审核的工具、案例和论文，附带搜索网站和 API。",
+  "features": [
+   "覆盖网站、游戏、App、二进制、固件、通信协议",
+   "案例研究和论文精选",
+   "中英文双语，有搜索网站",
+   "收录 AI 网站复刻、浏览器 Agent 等基准"
+  ],
+  "audience": "安全研究员、逆向工程爱好者",
+  "video_angle": "适合做资源合集类推荐，单独成片吸引力一般。",
+  "category": "数据/评测",
+  "ease": "偏开发者/研究",
+  "broad": "🔒 安全逆向"
+ },
+ "shinyobjectz/raea": {
+  "one_liner": "让 AI 用 React 代码做视频、动效、3D 和游戏，在本地 GPU 上渲染",
+  "problem": "让 AI 做视频和动画需要专业软件。raea 让 AI 用它最熟悉的 React/TypeScript 写画面，用本地 GPU 渲染，速度比播放还快。",
+  "features": [
+   "视频、动态图形、3D、游戏都能做",
+   "Rust + Bevy 引擎",
+   "安装时自动给 Claude Code 加上 Skill",
+   "有桌面 App，免费无需账号"
+  ],
+  "audience": "视频创作者、前端开发者",
+  "video_angle": "可与 cinecode、huashu-motion 合做一期「AI 做视频的三种开源方案」横评。",
+  "category": "图像/视频生成",
+  "ease": "需要一定配置",
+  "broad": "🎬 视频创作"
+ },
+ "ZiChuanLan/agent-purge": {
+  "one_liner": "一份人设，统一接管本机多个 AI 编程助手的系统提示词",
+  "problem": "同时用 Claude Code、Codex、Gemini CLI 等，每个都要单独配置规则和人设。它提供本地网页控制台统一管理和切换。",
+  "features": [
+   "支持 Pi、Codex、Claude Code、OpenCode、Gemini CLI、Qwen Code 等",
+   "会话内热切换人设",
+   "写入前预览改动，随时撤回",
+   "完全本地，零外部依赖"
+  ],
+  "audience": "同时使用多个 AI 编程工具的开发者",
+  "video_angle": "「一键给所有 AI 编程助手换人设」，适合编程工具类内容。",
+  "category": "编程助手",
+  "ease": "需要一定配置",
+  "broad": "💻 编程开发"
+ },
+ "yjid/kensaku": {
+  "one_liner": "本地文件启动器：按内容、按意思甚至按截图里的文字搜文件",
+  "problem": "记不住文件名只记得内容时，Everything 这类工具帮不上忙。Kensaku 能搜文档全文、图片 OCR 文字，还支持按语义搜索。",
+  "features": [
+   "毫秒级搜索 10 万个文件名",
+   "搜索 PDF/DOCX/EPUB 正文和截图里的文字",
+   "按意思搜，如「关于索引的那个 PDF」",
+   "支持「上周的截图」这类自然语言时间",
+   "AI Agent 可通过 MCP 搜索",
+   "完全本地，免费开源"
+  ],
+  "audience": "所有电脑用户，尤其文件多的人",
+  "video_angle": "「比 Everything 更强的免费搜索神器」，大众向，容易出圈。",
+  "category": "AI应用/产品",
+  "ease": "开箱即用",
+  "broad": "💼 办公效率"
+ },
+ "daveebbelaar/bama": {
+  "one_liner": "让 AI 照着你喜欢的 App 复刻一个原生 Mac 应用",
+  "problem": "想要一个原生 Mac App 但不会 Swift。这组 Skill 让 Agent 截图研究目标 App、写需求、按里程碑开发，每次提交都自测。",
+  "features": [
+   "克隆：自动截下目标 App 每个页面",
+   "规划：生成带验收标准的用户故事",
+   "构建：一个故事一个提交，自动跑测试和截图",
+   "Windows 版 BAWA 同步提供"
+  ],
+  "audience": "想做 Mac 软件的非专业开发者",
+  "video_angle": "「让 AI 复刻一个 Mac 软件」，可以复刻一个常用小工具做实测。",
+  "category": "编程助手",
+  "ease": "需要一定配置",
+  "broad": "💻 编程开发"
+ },
+ "morganlinton/BeautifulRust": {
+  "one_liner": "教 AI 编程助手写出地道 Rust 代码的 Skill 合集",
+  "problem": "AI 写的 Rust 常不地道、难维护。这套 Skill 汇总 Google 风格指南等五大来源，让 AI 写、审、移植 Rust 都按最佳实践来。",
+  "features": [
+   "写代码时自动加载最佳实践",
+   "代码审查附规则出处和修复示例",
+   "把 C/C++/Python/Go/JS 移植成 Rust，先迁移测试保证行为一致",
+   "附可直接用的 Clippy 配置"
+  ],
+  "audience": "Rust 开发者",
+  "video_angle": "受众偏窄，适合放进「AI 编程 Skill 推荐」合集。",
+  "category": "编程助手",
+  "ease": "需要一定配置",
+  "broad": "💻 编程开发"
+ },
+ "devvmhq/devvm": {
+  "one_liner": "每个项目一个独立虚拟机，让 AI 编程助手放心随便折腾",
+  "problem": "让 AI Agent 在自己电脑上跑命令有风险。devvm 给每个项目开一个装好工具链的隔离沙箱，人和 Agent 都在里面写代码。",
+  "features": [
+   "基于 Lima 的轻量虚拟机",
+   "自动配好项目工具链",
+   "支持 macOS 和 Linux",
+   "安装脚本带签名校验"
+  ],
+  "audience": "用 AI Agent 写代码、在意安全的开发者",
+  "video_angle": "可结合「AI 删库」类事故讲沙箱的必要性。",
+  "category": "编程助手",
+  "ease": "需要一定配置",
+  "broad": "💻 编程开发"
+ },
+ "synchopate/llama-modchip": {
+  "one_liner": "不用显卡，64GB 内存的电脑跑 2840 亿参数的 DeepSeek",
+  "problem": "大模型本地部署通常需要昂贵显卡。它通过 3 bit 级别的向量量化，让纯 CPU 机器也能跑超大 MoE 模型。",
+  "features": [
+   "DeepSeek-V4-Flash 284B 只占不到 59GB 内存",
+   "30B MoE 模型 CPU 投机解码最高 111 tok/s",
+   "支持 Linux、macOS、Windows",
+   "附质量评测和论文"
+  ],
+  "audience": "本地部署爱好者、没有高端显卡的玩家",
+  "video_angle": "「没有显卡也能跑满血大模型」，实测普通电脑效果，话题性好。",
+  "category": "推理/部署",
+  "ease": "偏开发者/研究",
+  "broad": "🧠 模型与算力"
+ },
+ "kubai087/kubai-icons": {
+  "one_liner": "让 AI 按统一风格画动画图标的 Skill，附 2800 多个开源图标",
+  "problem": "AI 生成的图标风格不统一。这个 Skill 规定几何规则并让 AI 自检，画出风格一致的图标，现成图标库也可直接用。",
+  "features": [
+   "2800+ 图标，支持 React/Vue/SVG",
+   "图标带动画",
+   "网站可搜索、改色、下载，支持 16 种语言",
+   "MIT 协议"
+  ],
+  "audience": "前端开发者、UI 设计师",
+  "video_angle": "「让 AI 画一整套图标」，适合设计类内容。",
+  "category": "编程助手",
+  "ease": "开箱即用",
+  "broad": "🎨 设计绘图"
+ },
+ "Tencent-Hunyuan/Hy-Memory": {
+  "one_liner": "腾讯混元开源的大模型 Agent 记忆引擎，让 AI 记住你和你的工作",
+  "problem": "AI 每次对话都会忘记之前的内容，换个工具更是从零开始。Hy Memory 为聊天、工作、写代码三种场景提供不同的长期记忆，配套的 MemHub 还能把 Claude Code、Cursor、Codex 等的历史汇总在本地统一调用。",
+  "features": [
+   "聊天场景：分层长期记忆",
+   "工作场景：事实 + 可复用经验两层记忆",
+   "编程场景：追踪代码版本演进",
+   "MemHub 桌面端：跨 AI 应用共享记忆，数据存本地",
+   "开源 30B 记忆模型（FP8/GGUF）"
+  ],
+  "audience": "Agent 开发者、同时用多个 AI 工具的重度用户",
+  "video_angle": "「大厂出手解决 AI 失忆」，可以演示在 Cursor 里聊过的事 Claude Code 也记得。",
+  "category": "Agent/智能体",
+  "ease": "需要一定配置",
+  "broad": "🤖 AI 智能体"
+ },
+ "tang1693/KIKUmap": {
+  "one_liner": "Mac 菜单栏应用：把 Claude 和 ChatGPT 对话整理成思维导图",
+  "problem": "同时开很多 AI 对话后，不知道哪个在跑、哪个跑完了、哪个在等你回复。KIKUmap 在菜单栏显示状态，把对话按主题拖成一张导图。",
+  "features": [
+   "菜单栏显示运行中、已完成、待处理的对话数量",
+   "支持 Claude、ChatGPT 和 Claude Code 会话",
+   "按主题拖拽分组，可加颜色和标签",
+   "对话完成时声音提醒",
+   "全键盘操作"
+  ],
+  "audience": "同时开多个 AI 对话的 Mac 用户",
+  "video_angle": "「AI 对话太多管不过来？」展示多任务并行时的整理效果。",
+  "category": "AI应用/产品",
+  "ease": "开箱即用",
+  "broad": "💼 办公效率"
+ },
+ "BaaRai/ARTEX": {
+  "one_liner": "AI 自主渗透测试平台（中文项目 ARTEX 的英文翻译版）",
+  "problem": "渗透测试流程长、工具多。ARTEX 用 AI Agent 自动执行测试任务，带可视化面板、资产图谱，关键操作需要人工审批。",
+  "features": [
+   "任务面板、token 用量和活动流",
+   "探索图和资产覆盖图",
+   "流量录制",
+   "工具调用拦截与人工审批",
+   "人在环中的对话控制"
+  ],
+  "audience": "安全团队、渗透测试人员",
+  "video_angle": "可与 sapper-v2 一起做「AI 黑客工具」专题（需强调仅限授权测试）。",
+  "category": "Agent/智能体",
+  "ease": "偏开发者/研究",
+  "broad": "🔒 安全逆向"
+ },
+ "shaongitbd/doory": {
+  "one_liner": "开源免费的 Canva 替代品，浏览器里做海报、PPT 和短视频",
+  "problem": "Canva 好用但很多功能收费，还要注册账号。Doory 打开浏览器就能设计，没有付费墙，也能自己部署。",
+  "features": [
+   "海报、社交配图、PPT、简历、名片、封面",
+   "动画和转场，可导出 MP4/GIF",
+   "约 2.75 万个图标和开源字体",
+   "导出 PNG/JPG/SVG/PDF",
+   "Docker 自托管"
+  ],
+  "audience": "自媒体、运营、需要做图的普通人",
+  "video_angle": "「免费版 Canva 来了」，适合工具推荐类视频；注意模板目前只有 10 个。",
+  "category": "AI应用/产品",
+  "ease": "开箱即用",
+  "broad": "🎨 设计绘图"
+ },
+ "reason-machines/reason-network": {
+  "one_liner": "让你和同事的 AI 编程助手互相发消息协作，端到端加密",
+  "problem": "团队里每人各用各的 AI Agent，彼此不知道对方在做什么。Reason Network 让所有人的 Agent 会话可见，并能直接互发消息。",
+  "features": [
+   "显示每个同事的 Agent 在哪个仓库、分支、正在做什么",
+   "Agent 之间直接通信，点对点加密",
+   "支持 Claude Code、Codex、Cursor、Gemini CLI 等",
+   "一句话让 Agent 自己加入"
+  ],
+  "audience": "多人协作的开发团队",
+  "video_angle": "「AI 之间开始互相聊天干活了」，展示两台电脑上的 Agent 协作。",
+  "category": "Agent/智能体",
+  "ease": "需要一定配置",
+  "broad": "💻 编程开发"
+ },
+ "emanuele-em/kanzo": {
+  "one_liner": "人和 AI Agent 共用的看板，4.7MB 单文件，零配置",
+  "problem": "给 AI 分配任务常常靠聊天，没有统一的任务管理。Kanzo 既是浏览器看板也是 MCP 服务器，你和 Agent 在同一块板上领任务、移卡片、写评论。",
+  "features": [
+   "4.7MB 程序，占用 5MB 内存，3 毫秒启动",
+   "浏览器看板 + MCP + 命令行三个入口",
+   "多个 Agent 可共享一块板",
+   "无需账号和服务器"
+  ],
+  "audience": "用 AI Agent 写代码的开发者",
+  "video_angle": "「给 AI 员工发任务卡」，可演示多个 Agent 自己领任务。",
+  "category": "MCP/工具集成",
+  "ease": "开箱即用",
+  "broad": "💼 办公效率"
+ },
+ "mw00/project-maya": {
+  "one_liner": "在自己的显卡上跑 GLM-5.3、DeepSeek-V4.1 等几千亿参数大模型",
+  "problem": "这类模型通常要数据中心才能跑。Maya 把常用专家放显存、次常用放内存、其余放 SSD，并按硬件自动调优，让个人电脑也能跑。",
+  "features": [
+   "支持 GLM-5.3（744B）、DeepSeek-V4.1-Flash（748B）等 4 个模型",
+   "两张 5090 加一张 4090 最高 149 tok/s，单张 5090 也有 30+",
+   "自研量化保留 97.7–99.2% 精度",
+   "兼容 OpenAI 和 Anthropic 接口",
+   "支持 AMD 和 Windows"
+  ],
+  "audience": "有高端显卡的本地部署玩家",
+  "video_angle": "「一张 5090 跑七千亿参数模型」，硬核实测类内容。",
+  "category": "推理/部署",
+  "ease": "偏开发者/研究",
+  "broad": "🧠 模型与算力"
+ },
+ "zeekk0/OpenAmika": {
+  "one_liner": "开源 AI 虚拟伴侣：Live2D 形象、实时语音、长期记忆",
+  "problem": "想要一个能语音聊天、有形象、记得你的 AI 伴侣。OpenAmika 是 MekaHime 的伴侣 Amika 的开源版，可在本地运行。",
+  "features": [
+   "Live2D 动态形象",
+   "实时语音对话",
+   "长期记忆",
+   "大脑可接 OpenRouter 或本地 Ollama",
+   "7 步安装，附视频教程"
+  ],
+  "audience": "二次元爱好者、AI 陪伴用户",
+  "video_angle": "「在自己电脑上养一个 AI 女友」，需要 RTX 20 系以上、8GB 显存。",
+  "category": "AI应用/产品",
+  "ease": "需要一定配置",
+  "broad": "🎮 游戏娱乐"
+ },
+ "UnderleveledBuilder/awesome-short-drama-skills": {
+  "one_liner": "AI 短剧/漫剧 Skill 精选：从小说改编到分镜和视频提示词",
+  "problem": "用 AI 做短剧，编剧、分镜、出片各环节都要找合适的工具。这里收录 86 个 Skill，按创作阶段整理，还做了剧本 Skill 盲测对比。",
+  "features": [
+   "覆盖小说改编、分集、钩子与付费卡点、分镜、角色资产",
+   "适配 Seedance、可灵、MiniMax 等视频模型的提示词",
+   "千问、豆包、Claude Code、Codex 等都能装",
+   "附 10 个剧本 Skill 的盲评结果"
+  ],
+  "audience": "AI 短剧/漫剧创作者",
+  "video_angle": "跟你的赛道相关：「哪个 AI 编剧 Skill 最强？」可直接引用它的盲测结果做内容。",
+  "category": "图像/视频生成",
+  "ease": "需要一定配置",
+  "broad": "🎬 视频创作"
+ },
+ "shanselman/sandbox-mcp": {
+  "one_liner": "给 AI 一台全新的一次性 Windows 电脑，测完就扔",
+  "problem": "让 AI 在自己电脑上测试软件有风险，用容器又模拟不了真实 Windows。它自动化 Windows 沙盒，AI 可以部署应用、操作界面、抓崩溃证据，然后销毁整台机器。",
+  "features": [
+   "真实 Windows 11 沙盒，非容器",
+   "完整 GUI 测试流程约 40–50 秒",
+   "命令行和 MCP 两种接口",
+   "AI 可自动配置，管理员操作前会询问"
+  ],
+  "audience": "Windows 应用开发者、测试人员",
+  "video_angle": "作者是微软知名开发者 Scott Hanselman，可作看点；「AI 的一次性测试电脑」。",
+  "category": "MCP/工具集成",
+  "ease": "需要一定配置",
+  "broad": "💻 编程开发"
+ },
+ "academa-labs/manimgx": {
+  "one_liner": "极速版 Manim：给 AI 用的数学和 3D 动画引擎，比原版快 90 倍",
+  "problem": "3Blue1Brown 风格的数学动画用 Manim 渲染很慢。ManimGX 兼容 Manim 的 API，用 Rust GPU 内核渲染，36 秒视频 3 秒就能出。",
+  "features": [
+   "比 ManimCE 快 90.6 倍，比 Blender 快 18.7 倍",
+   "兼容 Manim CE 写法",
+   "一句提示词让 Agent 自动安装并出片",
+   "可在浏览器中运行"
+  ],
+  "audience": "做数学、科普类视频的创作者",
+  "video_angle": "「让 AI 做 3Blue1Brown 风格动画」，速度对比很直观。",
+  "category": "图像/视频生成",
+  "ease": "需要一定配置",
+  "broad": "🎬 视频创作"
+ },
+ "jackwener/DSH-Android": {
+  "one_liner": "免 Root 在安卓手机上跑 DeepSeek Harness，真正替你干活的手机 Agent",
+  "problem": "手机上的 AI 助手大多只能聊天。它让 Agent 在手机上读屏、点按、输入，能操作微信、小红书、淘宝等 App，还能改系统设置和定时执行任务。",
+  "features": [
+   "操作任意 App：发微信、总结群聊、投简历、下单",
+   "安卓 14+ 可在虚拟屏操作，不占用你的屏幕",
+   "悬浮球随时呼出",
+   "内置 Linux 环境，能跑 Python 处理文件",
+   "支持 DeepSeek、Claude、Kimi、GLM、千问等模型"
+  ],
+  "audience": "安卓用户、想让 AI 替自己操作手机的人",
+  "video_angle": "「让 AI 帮我在 BOSS 直聘自动投简历」这类贴近国内用户的场景，传播力强。",
+  "category": "Agent/智能体",
+  "ease": "开箱即用",
+  "broad": "🤖 AI 智能体"
+ },
+ "zhuyansen/new-term-radar": {
+  "one_liner": "每天抓 AI 圈刚冒出来的新名词，赶在关键词工具收录之前",
+  "problem": "新模型、新产品名出现时，搜索量工具还查不到，内容创作者容易错过时机。它每天扫描 X、Hugging Face、GitHub 和官网站点地图，报告新出现的名称。",
+  "features": [
+   "多来源每日扫描新术语",
+   "输出关键词表",
+   "提供 MCP 服务器和 Skill，Agent 可直接调用",
+   "已上架 PyPI、MCP Registry 等"
+  ],
+  "audience": "做 SEO、选题的内容创作者",
+  "video_angle": "和你的需求很像：可以作为选题工具配合这个雷达一起用，「比别人早一天发现 AI 热点」。",
+  "category": "数据/评测",
+  "ease": "需要一定配置",
+  "broad": "📚 知识学习"
+ },
+ "Ebony-Vinyl/EAC-design-world": {
+  "one_liner": "DeepSeek Harness 的本地视频制作与设计插件，AI 和你一起剪片",
+  "problem": "让 AI 做视频常常只能拿到预览，拿不到可修改的工程。它连接模板、素材、多轨剪辑和设计系统，输出真实视频文件，网站和幻灯片也保留源文件和版本历史。",
+  "features": [
+   "多轨时间线剪辑、调色、变速运镜",
+   "150 个镜头模板和设计库",
+   "录屏、配音（含中文音色）、配乐、字幕",
+   "支持 macOS 和 Windows"
+  ],
+  "audience": "用 DeepSeek 做视频的创作者",
+  "video_angle": "可用它的「AI 自己录素材自己配乐」宣传片做开场，测试免费模型能做到什么程度。",
+  "category": "图像/视频生成",
+  "ease": "需要一定配置",
+  "broad": "🎬 视频创作"
+ },
+ "DominikScholz/open-bot-avatar": {
+  "one_liner": "给 AI Agent 做可互动头像的开放规范和渲染器",
+  "problem": "AI 产品需要可爱、有表情的头像，但没有统一格式。它用一个 SVG 路径加眼睛位置定义头像，零依赖渲染，附在线编辑器。",
+  "features": [
+   "极简 JSON 规范",
+   "零依赖渲染库",
+   "在线编辑器，可让 AI 生成头像",
+   "开放头像图库"
+  ],
+  "audience": "做 AI 产品的前端和设计师",
+  "video_angle": "体量小，适合放进设计工具合集。",
+  "category": "其他",
+  "ease": "开箱即用",
+  "broad": "🎨 设计绘图"
+ },
+ "gogoymh/auto-ontology-mcp": {
+  "one_liner": "把 NVIDIA Auto Ontology 做成 MCP：用自然语言问数据库，再建个人知识库",
+  "problem": "让 AI 查业务数据库容易写错 SQL，个人资料又散落各处。它给数据库建语义层，SQL 会经过校验；也能把收据、论文、截图整理成可检索的知识库，原文存在 Obsidian。",
+  "features": [
+   "自然语言问数据库，SQL 经本体校验",
+   "个人知识库：事实、概念、全文索引，可追溯来源",
+   "与 Obsidian 联动",
+   "无需额外 LLM API Key"
+  ],
+  "audience": "数据分析师、知识管理爱好者",
+  "video_angle": "可对比 Karpathy 的「LLM Wiki」思路讲个人知识库。",
+  "category": "RAG/知识库",
+  "ease": "需要一定配置",
+  "broad": "📚 知识学习"
+ },
+ "deeplethe/solid-glass": {
+  "one_liner": "专为 AI 应用设计的「实心玻璃」风格 UI 组件库",
+  "problem": "AI 产品界面同质化严重，液态玻璃风格又影响阅读。Solid Glass 介于扁平和液态玻璃之间，质感精致且文字清晰。",
+  "features": [
+   "基于 shadcn/ui、Tailwind、React",
+   "现成的整页模板（blocks）",
+   "可通过 shadcn registry 直接安装",
+   "开源"
+  ],
+  "audience": "前端开发者、UI 设计师",
+  "video_angle": "适合设计类内容，可展示「让 AI 产品界面更高级」。",
+  "category": "其他",
+  "ease": "需要一定配置",
+  "broad": "🎨 设计绘图"
+ },
+ "SAOS-3624/dsh-see-now": {
+  "one_liner": "让 AI 实时看你的屏幕，只传画面变化的帧，几乎不花 token",
+  "problem": "定时截屏喂给 AI 要么费钱、要么漏信息。See Now 先给每帧打变化分，只保留切换或运动的画面，再把多帧拼成一张图，同样 30 秒只需 2–3 张图。",
+  "features": [
+   "按变化量智能选帧，约 0.2ms 完成计算",
+   "多帧拼成一张图节省费用",
+   "支持屏幕、摄像头、视频文件",
+   "悬浮窗显示并朗读 AI 回复",
+   "Apache 2.0 可商用"
+  ],
+  "audience": "想让 AI 陪看屏幕、陪玩游戏的用户",
+  "video_angle": "「AI 陪我打游戏/看视频」的实时解说场景，娱乐性强。",
+  "category": "MCP/工具集成",
+  "ease": "需要一定配置",
+  "broad": "🤖 AI 智能体"
+ },
+ "Xin-YuXiao/Awesome-AI-for-Astronomy": {
+  "one_liner": "天文学 AI 论文与工具精选，每天自动收录 arXiv 新论文",
+  "problem": "天文 AI 研究分散在各处。这里整理了 421 篇论文和 66 个软件，可筛选，每篇附一句话摘要；AstroAI Today 每天用大模型筛选新论文。",
+  "features": [
+   "421 篇论文、66 个软件包",
+   "可按年份、是否开源代码、数据类型筛选",
+   "每日更新的 AstroAI Today",
+   "可下载 JSON/CSV"
+  ],
+  "audience": "天文和天体物理研究者、科普作者",
+  "video_angle": "可做「AI 如何帮人类找系外行星」类科普的资料来源。",
+  "category": "数据/评测",
+  "ease": "开箱即用",
+  "broad": "📚 知识学习"
+ },
+ "morluto/awesome-reverse-engineering": {
+  "one_liner": "逆向工程工具与学习资源精选，按任务查找工具",
+  "problem": "逆向工程工具繁多，新手不知从何入手。这里按「你要做什么」组织工具：学汇编、分析可执行文件、调试、脱壳、恶意软件分析等。",
+  "features": [
+   "按任务分类的入门表",
+   "覆盖二进制、App、固件、文件格式、协议",
+   "标注商业工具",
+   "同作者推出面向 Agent 的逆向工具 REA"
+  ],
+  "audience": "安全学习者、逆向工程师",
+  "video_angle": "适合资源推荐合集，可与 Awesome-REA 一起介绍。",
+  "category": "数据/评测",
+  "ease": "偏开发者/研究",
+  "broad": "🔒 安全逆向"
+ },
+ "wici-ai/inferssd": {
+  "one_liner": "用 SSD 跑比内存和显存还大的 MoE 大模型",
+  "problem": "超大 MoE 模型放不进内存和显存。InferSSD 基于 llama.cpp，把专家权重从 SSD 流式读取，普通电脑也能跑 DeepSeek-V4.1-Flash（763B）。",
+  "features": [
+   "支持 DeepSeek-V4.1-Flash、Muse-Spark-Open、Qwen3.6 等",
+   "使用标准 GGUF 文件",
+   "浏览器聊天界面 + OpenAI 兼容接口",
+   "支持 macOS Metal 和 Linux CUDA"
+  ],
+  "audience": "本地部署爱好者",
+  "video_angle": "可与 llama-modchip、project-maya 做「平民电脑跑超大模型的三种方案」对比。",
+  "category": "推理/部署",
+  "ease": "偏开发者/研究",
+  "broad": "🧠 模型与算力"
+ },
+ "Caho1/open-claude-ui": {
+  "one_liner": "逆向还原 Claude 桌面端界面的开源 React 组件库",
+  "problem": "很多人喜欢 Claude 客户端的设计和交互手感。作者通过逆向分析还原了 30 个组件和弹簧动画等交互参数，附 3000 多行分析手册。",
+  "features": [
+   "30 个独立 React 组件",
+   "8 项交互物理算法（弹簧、阻尼等）",
+   "按 Claude Desktop 版本号整理的逆向文档",
+   "借助 REA 逆向框架完成"
+  ],
+  "audience": "前端开发者、做 AI 聊天产品的团队",
+  "video_angle": "「为什么 Claude 的界面用着舒服」，从交互细节切入；注意它复刻的是商业产品的设计，涉及版权风险。",
+  "category": "其他",
+  "ease": "需要一定配置",
+  "broad": "🎨 设计绘图"
+ },
+ "HelixDB/helix-foundry": {
+  "one_liner": "让 AI 把公司的数据库、工具和文档连成一张知识图谱",
+  "problem": "公司数据散落在不同系统里，难以统一查询。Foundry 连接各种数据源，让 Agent 起草本体，加载进 HelixDB 图数据库，提问时答案可追溯到原始数据行。",
+  "features": [
+   "连接数据库、工具和文档",
+   "Agent 自动起草本体",
+   "图谱可视化探索",
+   "答案附引用来源",
+   "可用云端或 Docker 本地运行"
+  ],
+  "audience": "企业数据团队、做企业知识库的开发者",
+  "video_angle": "偏 B 端，适合「企业级知识图谱」话题。",
+  "category": "RAG/知识库",
+  "ease": "需要一定配置",
+  "broad": "📚 知识学习"
+ },
+ "Zleap-AI/SAG-Wiki": {
+  "one_liner": "轻量本地知识库，不调用大模型也能快速建索引、精准检索",
+  "problem": "大多数知识库建索引要调用大模型，又慢又费钱。SAG-Wiki 不调用 LLM 就能索引本地文件，提问时答案可追溯到原文。",
+  "features": [
+   "添加文件夹即可建知识库",
+   "PDF 先出文字索引，OCR 和表格在后台补充",
+   "支持 Office/RTF 文档",
+   "有 macOS/Windows 桌面版和 Agent Skill"
+  ],
+  "audience": "资料多的个人用户、知识工作者",
+  "video_angle": "「免费的本地版 NotebookLM」，可做对比实测。",
+  "category": "RAG/知识库",
+  "ease": "开箱即用",
+  "broad": "📚 知识学习"
+ },
+ "stubbi/asm": {
+  "one_liner": "汇编语言项目的包管理器和命令行工具",
+  "problem": "汇编项目缺少像 npm、cargo 那样的包管理。Asm 提供注册表和命令行工具，发布记录与源码和产物哈希一一对应；作者认为 AI 会让汇编开发重新变得可行。",
+  "features": [
+   "创建、测试汇编项目",
+   "包声明目标平台",
+   "产物可校验",
+   "支持 Linux x86-64/ARM64 和 Apple Silicon"
+  ],
+  "audience": "底层开发者",
+  "video_angle": "受众很窄，可作为「AI 让汇编复活了？」话题素材。",
+  "category": "编程助手",
+  "ease": "偏开发者/研究",
+  "broad": "💻 编程开发"
+ },
+ "mhfed/vn-law-check": {
+  "one_liner": "让 AI 编程助手按越南法律审查网站和 App 的合规风险",
+  "problem": "越南 2026 年起实施新的个人数据保护法等法规，中小企业容易忽视。这个 Skill 让 AI 检查表单、追踪代码、支付、AI 功能等，按优先级给出整改建议。",
+  "features": [
+   "覆盖个人数据、电商、网络安全、AI 四部法规",
+   "支持网站和移动 App",
+   "红黄绿分级报告",
+   "支持 Claude Code、Cursor、Copilot 等"
+  ],
+  "audience": "出海越南的开发者和企业",
+  "video_angle": "出海向内容可提及；也可作为「AI 法律合规 Skill」的案例。",
+  "category": "编程助手",
+  "ease": "需要一定配置",
+  "broad": "💻 编程开发"
+ },
+ "MiniMax-AI/mcode-stack": {
+  "one_liner": "MiniMax Code 团队自己每天用的 AI 编程工作流和 Skill",
+  "problem": "AI 写代码的「最佳实践」大多是空话。这里是 MiniMax 团队实际在用的做法：怎么保证代码质量、何时交给子 Agent、怎么防止长会话变质等。",
+  "features": [
+   "多套团队成员的工作流（ronny、jiachen 等）",
+   "SKILL.md 格式，Claude Code 一条命令安装",
+   "附相关文章解释思路"
+  ],
+  "audience": "AI 编程重度用户",
+  "video_angle": "「大厂工程师怎么用 AI 写代码」，有官方背书，话题性不错。",
+  "category": "编程助手",
+  "ease": "开箱即用",
+  "broad": "💻 编程开发"
+ },
+ "seedds/nxnative": {
+  "one_liner": "把你自己的 Switch / Switch 2 游戏变成 Mac、iPhone、iPad 上原生运行的 App",
+  "problem": "想在苹果设备上玩 Switch 游戏只能用模拟器，性能损耗大。nxnative 不是模拟器：它把游戏代码直接改写成在苹果芯片上运行，图形转译到 Metal，一个脚本就打包成 Mac 应用或可侧载的 IPA。",
+  "features": [
+   "游戏代码直接在苹果芯片上原生运行，非模拟",
+   "Switch 图形重建在 Metal 上",
+   "已测试马力欧赛车 World、大金刚 Bananza、塞尔达等 15 款 Switch 2 游戏",
+   "社区已做出多个图形化前端和游戏库",
+   "仓库不含任何游戏内容，需要用自己的游戏文件"
+  ],
+  "audience": "用 Mac / iPhone 玩游戏的玩家、对逆向技术感兴趣的人",
+  "video_angle": "「在 iPhone 上原生跑马力欧赛车」，效果演示极具冲击力；注意提醒版权风险，只能用自己拥有的正版游戏，设备要求 A17 Pro / M1 以上。",
+  "category": "其他",
+  "ease": "需要一定配置",
+  "broad": "🎮 游戏娱乐"
+ }
+}

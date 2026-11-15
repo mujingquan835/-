@@ -1,0 +1,49 @@
+# 每天自动抓取 GitHub 项目、翻译、生成网页数据，并提交回仓库。
+# Cloudflare Pages 发现仓库更新后会自动重新发布网页。
+# 也可以在 GitHub 仓库的 Actions 页面点 "Run workflow" 手动更新。
+name: 更新项目雷达
+
+on:
+  schedule:
+    - cron: "0 22 * * *"   # 每天 UTC 22:00 = 北京时间早上 6:00
+  workflow_dispatch:        # 允许手动点按钮运行
+
+permissions:
+  contents: write           # 需要把新数据提交回仓库
+
+concurrency:
+  group: radar-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 抓取 + 翻译 + 生成网页
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}          # GitHub 自动提供，不用自己设置
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }} # 可选；不设置就跳过 AI 深度介绍
+        run: python radar.py all -n 40
+
+      - name: 提交新数据
+        run: |
+          git config user.name "radar-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data site
+          if git diff --cached --quiet; then
+            echo "没有变化"
+          else
+            git commit -m "数据更新 $(date -u +%Y-%m-%d)"
+            git pull --rebase --autostash
+            git push
+          fi

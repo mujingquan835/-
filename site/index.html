@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 潜力项目雷达</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--fg:#1c1f24;--muted:#6b7280;--line:#e5e7eb;--accent:#2563eb;--up:#16a34a;--chip:#eef2ff;--chipfg:#3730a3;--done:#fef3c7}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1115;--card:#171a21;--fg:#e6e8eb;--muted:#9aa3af;--line:#272b35;--accent:#60a5fa;--up:#4ade80;--chip:#1e2540;--chipfg:#c7d2fe;--done:#3a2f12}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.6 -apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:12px 16px}
+.wrap{max-width:1280px;margin:0 auto}
+h1{font-size:18px;margin:0 0 8px;display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+h1 small{font-weight:400;color:var(--muted);font-size:12px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+input,select,button{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 10px}
+input[type=search]{flex:1 1 260px;min-width:0}
+input[type=number]{width:84px}
+label.ck{display:flex;gap:4px;align-items:center;color:var(--muted);font-size:13px}
+main{padding:16px}
+.stat{color:var(--muted);font-size:13px;margin-bottom:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:12px}
+@media (max-width:420px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.card.done{background:var(--done)}
+.top{display:flex;gap:10px;align-items:center}
+.top img{width:32px;height:32px;border-radius:8px;flex:none}
+.name{font-weight:600;word-break:break-all}
+.name a{color:var(--fg);text-decoration:none}.name a:hover{color:var(--accent)}
+.metrics{display:flex;flex-wrap:wrap;gap:4px 12px;color:var(--muted);font-size:12px}
+.metrics b{color:var(--fg);font-weight:600}.up{color:var(--up)!important}
+.one{font-weight:600}
+.sec{font-size:13px}.sec span{color:var(--muted)}
+ul{margin:0;padding-left:18px;font-size:13px}
+.angle{border-left:3px solid var(--accent);padding:4px 8px;font-size:13px;background:color-mix(in srgb,var(--accent) 8%,transparent);border-radius:0 6px 6px 0}
+.chips{display:flex;flex-wrap:wrap;gap:4px}
+.chip{background:var(--chip);color:var(--chipfg);border-radius:999px;padding:1px 8px;font-size:12px}
+.desc{color:var(--muted);font-size:12px}.desc summary{cursor:pointer}
+.zh{font-size:14px}
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto;gap:8px}
+.foot button{font-size:12px;padding:3px 8px;cursor:pointer}
+svg.spark{flex:none}
+.new{background:#dc2626;color:#fff;border-radius:4px;padding:0 5px;font-size:11px;margin-left:6px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;padding:2px 0 10px}
+.tabs button{flex:none;border-radius:999px;padding:5px 14px;cursor:pointer;font-size:14px;white-space:nowrap}
+.tabs button.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.tiers button{font-weight:600}
+.new.hot{background:#ea580c}
+.tabs button small{opacity:.6;margin-left:4px;font-size:12px}
+#runBtn{cursor:pointer;font-size:13px;padding:4px 12px;background:var(--accent);color:#fff;border:0}
+#runBtn:disabled{opacity:.6;cursor:default}
+#runLog{max-height:160px;overflow:auto;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px;font-size:12px;margin:0 0 8px;white-space:pre-wrap}
+.empty{color:var(--muted);text-align:center;padding:60px 0}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1>AI 项目雷达<small id="gen"></small>
+    <button id="runBtn" hidden>🔄 立即更新数据</button><small id="runMsg"></small></h1>
+  <pre id="runLog" hidden></pre>
+  <nav class="tabs tiers" id="tiers"></nav>
+  <nav class="tabs" id="tabs"></nav>
+  <div class="filters">
+    <input type="search" id="q" placeholder="搜索：名称 / 描述 / 中文介绍 / topic，如 agent 语音 浏览器">
+    <select id="sort">
+      <option value="score">按潜力分</option>
+      <option value="growth_7d">按近7天增星</option>
+      <option value="stars_per_day">按日均增星</option>
+      <option value="created">按最新创建</option>
+      <option value="stars">按星数</option>
+    </select>
+    <label class="ck">星数 <input type="number" id="smin" value="100"> – <input type="number" id="smax"></label>
+    <select id="age">
+      <option value="9999">不限创建时间</option><option value="30">30天内创建</option>
+      <option value="90">90天内创建</option><option value="180">180天内创建</option>
+    </select>
+    <label class="ck"><input type="checkbox" id="onlySum">只看有中文介绍</label>
+    <label class="ck"><input type="checkbox" id="hideDone">隐藏已做视频</label>
+  </div>
+</div></header>
+<main><div class="wrap">
+  <div class="stat" id="stat"></div>
+  <div class="grid" id="grid"></div>
+</div></main>
+<script src="data.js"></script>
+<script>
+const D = window.RADAR || {repos:[],categories:[],max_stars:3000,generated_at:'—'};
+const $ = id => document.getElementById(id);
+const store = {get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}};
+let done = new Set(store.get('radar_done', []));
+$('gen').textContent = `数据更新于 ${D.generated_at} · 共 ${D.repos.length} 个项目`;
+let cat = store.get('radar_tab', '');
+let tier = store.get('radar_tier', 'rising');
+const TIERS = [['rising', `🌱 潜力股（${D.max_stars} 星以下）`], ['hot', `🔥 爆款（${D.max_stars} 星以上）`], ['', '全部热度']];
+function drawTabs(){
+  const inTier = D.repos.filter(r => !tier || r.tier === tier);
+  $('tiers').innerHTML = TIERS.map(([k, label]) =>
+    `<button data-tier="${k}" class="${k===tier?'on':''}">${label}<small>${D.repos.filter(r => !k || r.tier === k).length}</small></button>`).join('');
+  const n = {}; inTier.forEach(r => n[r.broad] = (n[r.broad]||0) + 1);
+  const list = [['', '全部分类', inTier.length], ...(D.broad||[]).filter(b => n[b]).map(b => [b, b, n[b]])];
+  if(!list.some(([k]) => k === cat)) cat = '';
+  $('tabs').innerHTML = list.map(([k, label, c]) =>
+    `<button data-tab="${esc(k)}" class="${k===cat?'on':''}">${esc(label)}<small>${c}</small></button>`).join('');
+}
+$('tabs').addEventListener('click', e => {
+  const b = e.target.closest('button'); if(!b) return;
+  cat = b.dataset.tab; store.set('radar_tab', cat); drawTabs(); render();
+});
+$('tiers').addEventListener('click', e => {
+  const b = e.target.closest('button'); if(!b) return;
+  tier = b.dataset.tier; store.set('radar_tier', tier); drawTabs(); render();
+});
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt = n => n >= 1000 ? (n/1000).toFixed(1)+'k' : n;
+const today = new Date().toISOString().slice(0,10);
+const daysSince = d => (Date.now() - new Date(d)) / 864e5;
+
+function spark(arr){
+  if(!arr || arr.length < 2) return '';
+  const w=80,h=22,min=Math.min(...arr),max=Math.max(...arr),r=max-min||1;
+  const pts=arr.map((v,i)=>`${(i/(arr.length-1)*w).toFixed(1)},${(h-2-(v-min)/r*(h-4)).toFixed(1)}`).join(' ');
+  return `<svg class="spark" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}"><polyline fill="none" stroke="var(--up)" stroke-width="1.5" points="${pts}"/></svg>`;
+}
+
+function card(r){
+  const s = r.summary, isNew = daysSince(r.first_seen) <= 3;
+  const g = r.growth_7d == null ? '' : `<span>近7天 <b class="up">+${fmt(r.growth_7d)}</b></span>`;
+  const body = s ? `
+    <div class="one">${esc(s.one_liner)}</div>
+    <div class="sec"><span>解决什么问题：</span>${esc(s.problem)}</div>
+    <ul>${(s.features||[]).map(f=>`<li>${esc(f)}</li>`).join('')}</ul>
+    <div class="sec"><span>适合谁：</span>${esc(s.audience)} · <span>上手：</span>${esc(s.ease)}</div>
+    <div class="angle">🎬 ${esc(s.video_angle)}</div>`
+    : `<div class="zh">${esc(r.desc_zh || r.description) || '（作者没写描述）'}</div>
+       ${r.desc_zh ? `<details class="desc"><summary>英文原文</summary>${esc(r.description)}</details>` : ''}`;
+  return `<div class="card ${done.has(r.full_name)?'done':''}">
+    <div class="top"><img src="${esc(r.owner_avatar)}&s=64" alt="" loading="lazy">
+      <div style="min-width:0;flex:1"><div class="name"><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.full_name)}</a>${r.tier==='hot'?'<span class="new hot">🔥 爆款</span>':''}${isNew?'<span class="new">NEW</span>':''}</div>
+      <div class="metrics"><span>⭐ <b>${fmt(r.stars)}</b></span>${g}<span>日均 <b>${r.stars_per_day}</b></span><span>${r.age_days} 天前创建</span>${r.language?`<span>${esc(r.language)}</span>`:''}</div></div>
+      ${spark(r.sparkline)}</div>
+    ${body}
+    <div class="chips">${s?`<span class="chip">${esc(s.category)}</span>`:''}${r.topics.slice(0,5).map(t=>`<span class="chip">${esc(t)}</span>`).join('')}</div>
+    <div class="foot"><span class="metrics">潜力分 <b>${r.score}</b>${r.homepage?` · <a href="${esc(r.homepage)}" target="_blank" rel="noopener">官网</a>`:''}</span>
+      <button data-done="${esc(r.full_name)}">${done.has(r.full_name)?'✓ 已做视频':'标记已做视频'}</button></div>
+  </div>`;
+}
+
+function render(){
+  const terms = $('q').value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  const smin=+$('smin').value||0, smax=+$('smax').value||1e9, age=+$('age').value;
+  const onlySum=$('onlySum').checked, hideDone=$('hideDone').checked, sort=$('sort').value;
+  let list = D.repos.filter(r => {
+    if(r.stars<smin || r.stars>smax || r.age_days>age) return false;
+    if(onlySum && !r.summary) return false;
+    if(hideDone && done.has(r.full_name)) return false;
+    if(cat && r.broad !== cat) return false;
+    if(tier && r.tier !== tier) return false;
+    if(terms.length){
+      const hay = [r.full_name,r.description,r.desc_zh,r.language,...r.topics, r.summary?JSON.stringify(r.summary):''].join(' ').toLowerCase();
+      return terms.every(t => hay.includes(t));
+    }
+    return true;
+  });
+  const key = {created:r=>-r.age_days, growth_7d:r=>r.growth_7d??-1}[sort] || (r=>r[sort]);
+  list.sort((a,b)=>key(b)-key(a));
+  $('stat').textContent = `筛选出 ${list.length} 个项目`;
+  $('grid').innerHTML = list.slice(0,300).map(card).join('') || '<div class="empty">没有匹配的项目，先运行 python radar.py all 抓取数据</div>';
+}
+document.querySelectorAll('input,select').forEach(el=>el.addEventListener('input',render));
+drawTabs();
+$('grid').addEventListener('click',e=>{
+  const n=e.target.dataset?.done; if(!n) return;
+  done.has(n)?done.delete(n):done.add(n); store.set('radar_done',[...done]); render();
+});
+render();
+
+// ---- 一键更新（仅在通过 python radar.py serve 打开时可用）----
+const btn=$('runBtn'), log=$('runLog'), msg=$('runMsg');
+let polling=null;
+async function status(){
+  const s=await (await fetch('/api/status')).json();
+  btn.disabled=s.running;
+  btn.textContent=s.running?'⏳ 正在更新…':'🔄 立即更新数据';
+  if(s.log.length && (s.running || s.code)){log.hidden=false;log.textContent=s.log.join('\n');log.scrollTop=log.scrollHeight;}
+  if(s.running){msg.textContent=`开始于 ${s.started}，抓取约需 3~6 分钟`; if(!polling) polling=setInterval(status,2000);}
+  else{
+    if(polling){clearInterval(polling);polling=null;
+      if(s.code===0){msg.textContent='更新完成，正在刷新…';setTimeout(()=>location.reload(),800);return;}
+    }
+    msg.textContent = s.finished ? (s.code===0?`上次更新 ${s.finished} 完成`:`上次更新出错（代码 ${s.code}），看下方日志`) : '';
+  }
+}
+const autoNote=()=>{msg.textContent='· 每天早上 6 点自动更新';};
+if(location.protocol.startsWith('http')){
+  fetch('/api/status').then(r=>{if(r.ok && r.headers.get('content-type')?.includes('json')){btn.hidden=false;status();}else autoNote();}).catch(autoNote);
+  btn.onclick=async()=>{btn.disabled=true;log.textContent='';await fetch('/api/run',{method:'POST'});status();};
+}
+</script>
+</body>
+</html>
